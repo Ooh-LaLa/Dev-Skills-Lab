@@ -13,6 +13,11 @@ function index(req, res) {
     })
   }
 
+  function newGem(req, res) {
+    res.render('gems/new')
+  }
+
 export {
-	index
+	index,
+  newGem as new
 }
