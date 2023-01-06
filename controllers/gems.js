@@ -1,10 +1,17 @@
-import { gems } from '../data/gem-data.js'
+import { Gem } from '../models/gem.js'
 
 function index(req, res) {
-  res.render('gems/index', {
-    gems: gems
-  })
-}
+    Gem.find({})
+    .then(gems => { 
+      res.render('gems/index', {
+        gems: gems,
+      })
+    })
+    .catch(error => { 
+      console.log(error)
+      res.redirect('/')
+    })
+  }
 
 export {
 	index
