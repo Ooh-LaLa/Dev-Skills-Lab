@@ -17,7 +17,23 @@ function index(req, res) {
     res.render('gems/new')
   }
 
+
+  function create(req, res) {
+    console.log(req.body)
+    req.body.done = false
+    Gem.create(req.body)
+    .then(gem => {
+      res.redirect('/gems')
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/gems')
+    })
+  }
+
+
 export {
 	index,
-  newGem as new
+  newGem as new,
+  create
 }

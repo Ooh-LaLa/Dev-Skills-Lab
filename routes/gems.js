@@ -6,6 +6,14 @@ const router = Router()
 /* GET gems listing. */
 router.get('/', gemsCtrl.index)
 
+// GET localhost:3000/todos/new
+router.get('/new', gemsCtrl.new)
+
+
+// POST localhost:3000/todos
+router.post('/', gemsCtrl.create)
+
+
 
 export {
   router
