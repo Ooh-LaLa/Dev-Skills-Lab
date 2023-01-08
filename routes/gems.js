@@ -10,6 +10,9 @@ router.get('/', gemsCtrl.index)
 router.get('/new', gemsCtrl.new)
 
 
+router.get('/:id', gemsCtrl.show) 
+
+
 // POST localhost:3000/todos
 router.post('/', gemsCtrl.create)
 

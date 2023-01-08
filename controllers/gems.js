@@ -32,8 +32,22 @@ function index(req, res) {
   }
 
 
+  function show(req, res) {
+    Gem.findById(req.params.id)
+    .then(gem => {
+      res.render('gems/show', {
+        gem: gem
+      })
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/gems')
+    })
+  }
+
 export {
 	index,
   newGem as new,
-  create
+  create,
+  show
 }
