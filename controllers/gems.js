@@ -46,9 +46,22 @@ function index(req, res) {
     })
   }
 
+  function deleteGem(req, res) {
+    Gem.findByIdAndDelete(req.params.id)
+    .then(gem => {
+      res.redirect('/gems')
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/gems')
+    })
+  }
+  
+
 export {
 	index,
   newGem as new,
   create,
-  show
+  show,
+  deleteGem as delete,
 }

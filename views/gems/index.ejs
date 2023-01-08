@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <link 
 		id="favicon" 
     rel="icon"
@@ -16,7 +17,15 @@
     <h1>Gems as of <%= time %></h1>
     <ul>
       <% gems.forEach(function(gem) { %>
-        <li><a href="/gems/<%= gem._id %>">
+        <li>
+          <form 
+          action="/gems/<%= gem._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+          <button type="submit">X</button>
+        </form>
+          <a href="/gems/<%= gem._id %>">
                   <%= gem.text %></a>
                   - 
                   <%= gem.done ? 'cut' : 'uncut' %>

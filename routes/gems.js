@@ -17,6 +17,7 @@ router.get('/:id', gemsCtrl.show)
 router.post('/', gemsCtrl.create)
 
 
+router.delete('/:id', gemsCtrl.delete)
 
 export {
   router
