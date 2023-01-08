@@ -5,6 +5,7 @@ function index(req, res) {
     .then(gems => { 
       res.render('gems/index', {
         gems: gems,
+        time: req.time
       })
     })
     .catch(error => { 
